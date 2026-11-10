@@ -4,12 +4,12 @@ session_start();
 require_once "../model/conexao.php";
 
 if (!isset($_SESSION["id_usuario"])) {
-    header("Location: ../view/inicio.php");
+    header("Location: ../view/index.php");
     exit;
 }
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../view/inicio.php");
+    header("Location: ../view/index.php");
     exit;
 }
 
@@ -17,7 +17,7 @@ if (
     !isset($_FILES["foto_perfil"]) ||
     $_FILES["foto_perfil"]["error"] !== UPLOAD_ERR_OK
 ) {
-    header("Location: ../view/inicio.php?erro_foto=upload");
+    header("Location: ../view/index.php?erro_foto=upload");
     exit;
 }
 
@@ -25,7 +25,7 @@ $arquivo = $_FILES["foto_perfil"];
 $limiteBytes = 5 * 1024 * 1024; // Limite de 5 MB
 
 if ($arquivo["size"] <= 0 || $arquivo["size"] > $limiteBytes) {
-    header("Location: ../view/inicio.php?erro_foto=tamanho");
+    header("Location: ../view/index.php?erro_foto=tamanho");
     exit;
 }
 
@@ -43,7 +43,7 @@ if (
     !isset($tiposPermitidos[$mime]) ||
     @getimagesize($arquivo["tmp_name"]) === false
 ) {
-    header("Location: ../view/inicio.php?erro_foto=formato");
+    header("Location: ../view/index.php?erro_foto=formato");
     exit;
 }
 
@@ -56,7 +56,7 @@ if (
     !mkdir($pasta, 0755, true) &&
     !is_dir($pasta)
 ) {
-    header("Location: ../view/inicio.php?erro_foto=pasta");
+    header("Location: ../view/index.php?erro_foto=pasta");
     exit;
 }
 
@@ -68,7 +68,7 @@ $nomeArquivo = "usuario_" . (int) $_SESSION["id_usuario"]
 $destino = $pasta . DIRECTORY_SEPARATOR . $nomeArquivo;
 
 if (!move_uploaded_file($arquivo["tmp_name"], $destino)) {
-    header("Location: ../view/inicio.php?erro_foto=salvar");
+    header("Location: ../view/index.php?erro_foto=salvar");
     exit;
 }
 
@@ -107,7 +107,7 @@ try {
         @unlink($destino);
     }
 
-    header("Location: ../view/inicio.php?erro_foto=banco");
+    header("Location: ../view/index.php?erro_foto=banco");
     exit;
 }
 
