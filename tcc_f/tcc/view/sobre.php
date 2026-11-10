@@ -392,7 +392,7 @@
             <ul class="menuPrincipal">
 
                 <li>
-                    <a href="inicio.php">Início</a>
+                    <a href="index.php">Início</a>
                 </li>
 
                 <li>
