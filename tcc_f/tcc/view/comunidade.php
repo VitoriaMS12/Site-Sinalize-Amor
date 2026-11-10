@@ -441,7 +441,7 @@ textarea {
 <body>
 <header class="topo">
 <nav class="nav">
-<a class="logo" href="inicio.php">Sinalize<span>Amor</span>
+<a class="logo" href="index.php">Sinalize<span>Amor</span>
 </a>
 <div class="links">
 <a href="inicio.php">Início</a>
