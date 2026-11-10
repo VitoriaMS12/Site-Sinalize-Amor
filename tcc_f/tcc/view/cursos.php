@@ -411,9 +411,9 @@ footer{
 <header class="headerSite"><div class="navbarPrincipal">
 <div class="logoSite">Sinalize<span>Amor</span></div>
 <ul class="menuPrincipal">
-<li><a href="inicio.php">Início</a></li><li><a href="sobre.php">Sobre</a></li>
+<li><a href="index.php">Início</a></li><li><a href="sobre.php">Sobre</a></li>
 <li><a href="comunidade.php">Comunidade</a></li><li><a href="contato.php">Contato</a></li>
-</ul><a href="inicio.php" class="botaoVoltar">Voltar</a>
+</ul><a href="index.php" class="botaoVoltar">Voltar</a>
 </div><div class="sloganSite">A Caminho da Inclusão</div></header>
 <section class="introducaoCursos"><div class="nivelUsuario">
 <?php if (!$logado): ?>📚 Você está no nível 0 - Iniciante
