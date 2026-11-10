@@ -444,7 +444,7 @@ textarea {
 <a class="logo" href="index.php">Sinalize<span>Amor</span>
 </a>
 <div class="links">
-<a href="inicio.php">Início</a>
+<a href="indexo.php">Início</a>
 <a href="sobre.php">Sobre</a>
 <a href="cursos.php">Cursos</a>
 <a href="contato.php">Contato</a>
