@@ -4,12 +4,12 @@ session_start();
 require_once "../model/conexao.php";
 
 if (!isset($_SESSION["id_usuario"])) {
-    header("Location: ../view/inicio.php");
+    header("Location: ../view/index.php");
     exit;
 }
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../view/inicio.php");
+    header("Location: ../view/index.php");
     exit;
 }
 
@@ -44,7 +44,7 @@ try {
         }
     }
 } catch (Throwable $e) {
-    header("Location: ../view/inicio.php?erro_foto=excluir");
+    header("Location: ../view/index.php?erro_foto=excluir");
     exit;
 }
 
