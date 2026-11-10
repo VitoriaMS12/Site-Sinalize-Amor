@@ -437,7 +437,7 @@
 
         <ul class="menuPrincipal">
 
-            <li><a href="inicio.php"> Início</a></li>
+            <li><a href="index.php"> Início</a></li>
 
             <li>
                 <a href="sobre.php">
@@ -459,7 +459,7 @@
 
         </ul>
 
-        <a href="inicio.php" class="botaoVoltar">
+        <a href="index.php" class="botaoVoltar">
             Voltar
         </a>
 
