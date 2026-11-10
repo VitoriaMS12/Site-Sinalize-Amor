@@ -117,7 +117,7 @@ try {
     $_SESSION["email"] = $email;
     $_SESSION["tipo_usuario"] = "usuario";
     $_SESSION["foto_perfil"] = "perfil.jpg";
-    header("Location: /tcc/view/inicio.php");
+    header("Location: /tcc/view/index.php");
     exit;
 } catch (PDOException $e) {
     if ($e->getCode() === "23000") {
