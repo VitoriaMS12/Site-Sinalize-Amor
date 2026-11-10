@@ -6,7 +6,7 @@ require_once __DIR__ . "/../model/conexao.php";
 
 // PERMITIR APENAS POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: /tcc/view/inicio.php");
+    header("Location: /tcc/view/index.php");
     exit;
 }
 
@@ -100,7 +100,7 @@ try {
             : "perfil.jpg";
 
     // REDIRECIONAMENTO
-    header("Location: /tcc/view/inicio.php");
+    header("Location: /tcc/view/index.php");
     exit;
 
 } catch (PDOException $e) {
