@@ -1,20 +1,14 @@
 <?php
 
-// Detecta se está rodando no Railway
-$railway = !empty(getenv("RAILWAY_ENVIRONMENT"));
+$hostRailway = getenv("MYSQLHOST");
 
-if ($railway) {
-
-    // Configurações do banco no Railway
-    $host = getenv("MYSQLHOST");
+if (!empty($hostRailway)) {
+    $host = $hostRailway;
     $porta = getenv("MYSQLPORT");
     $banco = getenv("MYSQLDATABASE");
     $usuario = getenv("MYSQLUSER");
     $senha = getenv("MYSQLPASSWORD");
-
 } else {
-
-    // Configurações locais do XAMPP
     $host = "localhost";
     $porta = "3306";
     $banco = "sinalize_amor";
@@ -23,7 +17,6 @@ if ($railway) {
 }
 
 try {
-
     $pdo = new PDO(
         "mysql:host=$host;port=$porta;dbname=$banco;charset=utf8mb4",
         $usuario,
@@ -33,9 +26,6 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 } catch (PDOException $e) {
-
-    error_log("Erro na conexão com o banco: " . $e->getMessage());
-
+    error_log("Erro na conexão: " . $e->getMessage());
     die("Não foi possível conectar ao banco de dados.");
-
 }
