@@ -1,4 +1,3 @@
-
 <?php
 
 // Detecta se está rodando no Railway
